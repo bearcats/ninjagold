@@ -1,0 +1,26 @@
+Gold: <%= session[:gold] %>
+<%# From Rails-Snippets (Atom (sorry I don't know the sublime one)) %>
+<form class="  " action="/sources/cave" method="post">
+ <input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>" >
+ <input type="submit" value="Cave yo!">
+</form>
+<form class="  " action="/sources/house" method="post">
+ <input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>" >
+ <input type="submit" value="House yo!">
+</form>
+<form class="  " action="/sources/casino" method="post">
+ <input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>" >
+ <input type="submit" value="Casino yo!">
+</form>
+<form class="  " action="/sources/farm" method="post">
+ <input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>" >
+ <input type="submit" value="Farm yo!">
+</form>
+<div>
+  <% session[:activities].reverse.each { |activity|  %>
+  <p>
+    <%= activity %>
+  </p>
+  <% } %>
+</div>
+<a href="/sources/reset"><button>Reset</button></a>
